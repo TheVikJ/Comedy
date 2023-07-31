@@ -4,3 +4,62 @@ body {
     background-color: #008597 !important;
     font-family: 'DELIRIUM NCV', sans-serif !important;
 }
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 2vh;
+    display: flex;
+}
+
+#vik {
+    height: 90vh; 
+    padding-top: 5vh; 
+    padding-bottom: 2.5vh;
+    padding-right: 2vw;
+}
+
+h1 {
+    color: #ff0000 !important; 
+    font-size: 43vh !important; 
+    text-shadow:
+        5px  5px 0 #ffffff,
+        -1px -1px 0 #ffffff,  
+        1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+        1px  1px 0 #ffffff;
+}
+
+.line {
+    height: 1vh;
+    width: 100%;
+    background-color: #ff0000;
+}
+
+.contact {
+    font-size: 8vh !important;
+}
+
+.proj {
+    font-size: 13vh !important;
+}
+
+a {
+    color: #ff0000 !important;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: dashed;
+    text-shadow:
+        5px  5px 0 #ffffff,
+        -1px -1px 0 #ffffff,  
+        1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+        1px  1px 0 #ffffff;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
