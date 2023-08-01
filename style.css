@@ -1,4 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/delirium-ncv');
+@import url('https://fonts.cdnfonts.com/css/virgo-01');
+@import url('https://fonts.cdnfonts.com/css/air-america');
 
 body {
     background-color: #008597 !important;
@@ -19,11 +21,50 @@ body {
     padding-right: 2vw;
 }
 
+#logo {
+    width: 45vw;
+}
+
+#poster {
+    height: 98vh;
+}
+
+#poster-con {
+    background-image: url(images/vbd-back.png) !important;
+    background-size: 100%;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 h1 {
     color: #ff0000 !important; 
     font-size: 43vh !important; 
     text-shadow:
         5px  5px 0 #ffffff,
+        -1px -1px 0 #ffffff,  
+        1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+        1px  1px 0 #ffffff;
+}
+
+h2 {
+    color: #ff0000 !important; 
+    font-size: 15vh !important; 
+    font-family: 'Virgo 01', sans-serif !important;
+    text-shadow:
+        5px  5px 0 #ffffff,
+        -1px -1px 0 #ffffff,  
+        1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+        1px  1px 0 #ffffff;
+}
+
+h3 {
+    color: #ff0000 !important; 
+    font-size: 10vh !important; 
+    text-shadow:
         -1px -1px 0 #ffffff,  
         1px -1px 0 #ffffff,
         -1px  1px 0 #ffffff,
