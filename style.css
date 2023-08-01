@@ -16,7 +16,7 @@
     }
 
     #vik {
-        height: 50vh; 
+        width: 23vw; 
         padding-top: 5vh; 
         padding-bottom: 2.5vh;
         padding-right: 2vw;
@@ -79,11 +79,11 @@
     }
 
     .contact {
-        font-size: 7vh !important;
+        font-size: 5vh !important;
     }
 
     .proj {
-        font-size: 11vh !important;
+        font-size: 10vh !important;
     }
 
     a {
@@ -99,7 +99,6 @@
     a:hover {
         text-decoration: dashed;
         text-shadow:
-            5px  5px 0 #ffffff,
             -1px -1px 0 #ffffff,  
             1px -1px 0 #ffffff,
             -1px  1px 0 #ffffff,
