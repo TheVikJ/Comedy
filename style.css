@@ -41,7 +41,7 @@
 
     h1 {
         color: #ff0000 !important; 
-        font-size: 20vh !important; 
+        font-size: 15vh !important; 
         text-shadow:
             5px  5px 0 #ffffff,
             -1px -1px 0 #ffffff,  
@@ -52,7 +52,7 @@
 
     h2 {
         color: #ff0000 !important; 
-        font-size: 15vh !important; 
+        font-size: 13vh !important; 
         font-family: 'Virgo 01', sans-serif !important;
         text-shadow:
             5px  5px 0 #ffffff,
@@ -79,11 +79,11 @@
     }
 
     .contact {
-        font-size: 9vh !important;
+        font-size: 7vh !important;
     }
 
     .proj {
-        font-size: 13vh !important;
+        font-size: 11vh !important;
     }
 
     a {
