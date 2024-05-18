@@ -1,0 +1,39 @@
+@media only screen and (min-width: 900px) {
+    body 
+    {
+        background-color: #181b1a !important;
+    }
+
+    img 
+    {
+        width: 80% !important;
+    }
+
+    .container {
+        width: 98vw;
+        padding-top: 3vh;
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    body 
+    {
+        background-color: #181b1a !important;
+    }
+
+    img 
+    {
+        width: 95% !important;
+    }
+
+    .container {
+        width: 98vw;
+        padding-top: 3vh;
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}

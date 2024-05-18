@@ -108,6 +108,7 @@
     .row {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
 
     .vbd {
@@ -229,6 +230,7 @@
 
     .row {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around !important;
+        flex-wrap: wrap;
     }
 }
