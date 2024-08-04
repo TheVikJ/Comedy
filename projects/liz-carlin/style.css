@@ -16,7 +16,7 @@ body {
 }
 
 h2 {
-    color: #e04e2e !important; 
+    color: #c54124 !important; 
     font-size: 13vh !important; 
     font-family: 'DELIRIUM NCV', sans-serif !important;
     text-shadow:
@@ -28,7 +28,7 @@ h2 {
 }
 
 h3 {
-color: #e04e2e !important; 
+color: #c54124 !important; 
 font-size: 9vh !important; 
     font-family: 'DELIRIUM NCV', sans-serif !important;
     text-shadow:
@@ -40,7 +40,7 @@ font-size: 9vh !important;
 }
 
 h4 {
-color: #e04e2e !important; 
+color: #c54124 !important; 
 font-size: 7vh !important; 
     font-family: 'DELIRIUM NCV', sans-serif !important;
     text-shadow:
@@ -53,7 +53,7 @@ font-size: 7vh !important;
 
 h5 {
     font-family: 'Courier New', Courier, monospace !important;
-    color: #e04e2e !important; 
+    color: #c54124 !important; 
     font-size: 4vh !important;
     font-weight: bold !important; 
     text-shadow:
@@ -66,7 +66,7 @@ h5 {
 .line {
     height: 1vh;
     width: 100%;
-    background-color: #e04e2e;
+    background-color: #c54124;
     border-radius: 1vh;
     border-style: solid;
     border-color: #f5f5dc;
@@ -74,7 +74,7 @@ h5 {
 
 .small-li {
     font-family: 'Courier New', Courier, monospace !important;
-    color: #e04e2e !important; 
+    color: #c54124 !important; 
     font-size: 2.75vh !important;
     font-weight: bold !important; 
     text-shadow:
@@ -86,7 +86,7 @@ h5 {
 
 .big-li {
     font-family: 'Courier New', Courier, monospace !important;
-    color: #e04e2e !important; 
+    color: #c54124 !important; 
     font-size: 3.25vh !important;
     font-weight: bold !important; 
     text-shadow:
@@ -115,7 +115,7 @@ h5 {
 .outlined-bullets li::marker {
     color: transparent; /* Hides the default bullet */
     content: '\2022'; /* Adds the bullet back */
-    color: #e04e2e; /* Sets the bullet color to black */
+    color: #c54124; /* Sets the bullet color to black */
     text-shadow: -1px -1px 0 #f5f5dc, 1px -1px 0 #f5f5dc, -1px 1px 0 #f5f5dc, 1px 1px 0 #f5f5dc; /* Adds white outline */
 }
 
@@ -124,14 +124,14 @@ ul li {
 }
 
 .btn {
-    color: #e04e2e !important; 
+    color: #c54124 !important; 
     font-size: 13vh !important; 
     font-family: 'DELIRIUM NCV', sans-serif !important;
     background-color: transparent;
     width: 30%;
     height: 10%;
     justify-content: center;
-    border: 5px solid #e04e2e !important;
+    border: 5px solid #c54124 !important;
     border-radius: 3vh !important;
     text-shadow:
         5px  5px 0 #f5f5dc,
@@ -151,14 +151,14 @@ ul li {
     width: 30%;
     height: 10%;
     justify-content: center;
-    border: 5px solid #e04e2e !important;
+    border: 5px solid #c54124 !important;
     border-radius: 3vh !important;
     text-shadow:
-        5px  5px 0 #e04e2e,
-        -1px -1px 0 #e04e2e,  
-        1px -1px 0 #e04e2e,
-        -1px  1px 0 #e04e2e,
-        1px  1px 0 #e04e2e;
+        5px  5px 0 #c54124,
+        -1px -1px 0 #c54124,  
+        1px -1px 0 #c54124,
+        -1px  1px 0 #c54124,
+        1px  1px 0 #c54124;
     outline: 5px solid #f5f5dc !important;
     outline-offset: 0 !important;
     box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
