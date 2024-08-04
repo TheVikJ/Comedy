@@ -1,0 +1,38 @@
+@import url('https://fonts.cdnfonts.com/css/delirium-ncv');
+@import url('https://fonts.cdnfonts.com/css/virgo-01');
+@import url('https://fonts.cdnfonts.com/css/air-america');
+
+body {
+    background-color: #6c9da2 !important;
+    font-family: 'DELIRIUM NCV', sans-serif !important;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: #e04e2e !important; 
+    font-size: 13vh !important; 
+    font-family: 'DELIRIUM NCV', sans-serif !important;
+    text-shadow:
+        5px  5px 0 #f5f5dc,
+        -1px -1px 0 #f5f5dc,  
+        1px -1px 0 #f5f5dc,
+        -1px  1px 0 #f5f5dc,
+        1px  1px 0 #f5f5dc;
+}
+
+img {
+    width: 90vw;
+    border: #e04e2e solid !important;
+    border-radius: 5vh;
+}
+
+.row {
+    padding: 2vh;
+}

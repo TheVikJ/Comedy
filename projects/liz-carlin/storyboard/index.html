@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Liz Carlin Show</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+
+  <body></body>
+
+  <div class="container">
+    <div class="col" id="main-col">
+        <div class="row">
+            <h2>Pilot Storyboard</h2>
+        </div>
+        <script>
+            const col = document.getElementById('main-col');
+            for (let i = 238; i <= 268; i++) {
+                const imgElement = document.createElement('img');
+                imgElement.src = `images/IMG_0${i}.PNG`;
+                const divElement = document.createElement('div');
+                divElement.className = 'row';
+                divElement.appendChild(imgElement);
+                col.appendChild(divElement);
+            }
+        </script>
+    </div>
+  </div>
+</html>
