@@ -73,9 +73,12 @@
     }
 
     .line {
+        height: 1.5vh;
         height: 1vh;
         width: 100%;
         background-color: #ff0000;
+        border-style: solid;
+        border-color: #ffffff;
     }
 
     .contact {
@@ -195,9 +198,12 @@
     }
 
     .line {
-        height: 1vh;
+        height: 1.5vh;
         width: 100%;
         background-color: #ff0000;
+        border-radius: 1vh;
+        border-style: solid;
+        border-color: #ffffff;
     }
 
     .contact {
