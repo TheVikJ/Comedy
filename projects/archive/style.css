@@ -44,9 +44,13 @@
         flex-wrap: wrap;
         justify-content: center !important;
     }
+
+    #home {
+        height: 5vh !important;
+    }
 }
 
-@media only screen and (min-width: 899px) {
+@media only screen and (min-width: 900px) {
     body {
         background-color: #008597 !important;
         font-family: 'DELIRIUM NCV', sans-serif !important;
@@ -89,5 +93,9 @@
         display: flex;
         width: 100%;
         justify-content: space-around !important;
+    }
+
+    #home {
+        height: 5vh !important;
     }
 }

@@ -163,3 +163,17 @@ ul li {
     outline-offset: 0 !important;
     box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
 }
+
+#home {
+    height: 5vh !important;
+    width: 5vh !important;
+    border: 2vh !important;
+    border-style: solid;
+    border-radius: 1vh; 
+    box-shadow:
+        5px  5px 0 #f5f5dc,
+        -1px -1px 0 #f5f5dc,  
+        1px -1px 0 #f5f5dc,
+        -1px  1px 0 #f5f5dc,
+        1px  1px 0 #f5f5dc !important;
+}
