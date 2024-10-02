@@ -2,178 +2,355 @@
 @import url('https://fonts.cdnfonts.com/css/virgo-01');
 @import url('https://fonts.cdnfonts.com/css/air-america');
 
-body {
-    background-color: #6c9da2 !important;
-    font-family: 'DELIRIUM NCV', sans-serif !important;
-}
+@media only screen and (max-width: 899px) {
+    body {
+        background-color: #6c9da2 !important;
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+    }
 
-.container {
-    width: 100vw;
-    height: 100vh;
-    padding-top: 2vh;
-    display: flex;
-    justify-content: center;
-}
+    .container {
+        width: 100vw;
+        height: 100vh;
+        padding-top: 2vh;
+        display: flex;
+        justify-content: center;
+    }
 
-h2 {
+    h2 {
+        color: #c54124 !important; 
+        font-size: 13vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        text-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
+
+    h3 {
     color: #c54124 !important; 
-    font-size: 13vh !important; 
-    font-family: 'DELIRIUM NCV', sans-serif !important;
-    text-shadow:
-        5px  5px 0 #f5f5dc,
-        -1px -1px 0 #f5f5dc,  
-        1px -1px 0 #f5f5dc,
-        -1px  1px 0 #f5f5dc,
-        1px  1px 0 #f5f5dc;
-}
+    font-size: 9vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        text-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
 
-h3 {
-color: #c54124 !important; 
-font-size: 9vh !important; 
-    font-family: 'DELIRIUM NCV', sans-serif !important;
-    text-shadow:
-        5px  5px 0 #f5f5dc,
-        -1px -1px 0 #f5f5dc,  
-        1px -1px 0 #f5f5dc,
-        -1px  1px 0 #f5f5dc,
-        1px  1px 0 #f5f5dc;
-}
-
-h4 {
-color: #c54124 !important; 
-font-size: 7vh !important; 
-    font-family: 'DELIRIUM NCV', sans-serif !important;
-    text-shadow:
-        3px  5px 0 #f5f5dc,
-        -1px -1px 0 #f5f5dc,  
-        1px -1px 0 #f5f5dc,
-        -1px  1px 0 #f5f5dc,
-        1px  1px 0 #f5f5dc;
-}
-
-h5 {
-    font-family: 'Courier New', Courier, monospace !important;
+    h4 {
     color: #c54124 !important; 
-    font-size: 4vh !important;
-    font-weight: bold !important; 
-    text-shadow:
-        -1px -1px 0 #f5f5dc,  
-        1px -1px 0 #f5f5dc,
-        -1px  1px 0 #f5f5dc,
-        1px  1px 0 #f5f5dc;
+    font-size: 7vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        text-shadow:
+            3px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
+
+    h5 {
+        font-family: 'Courier New', Courier, monospace !important;
+        color: #c54124 !important; 
+        font-size: 4vh !important;
+        font-weight: bold !important; 
+        text-shadow:
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
+
+    .line {
+        height: 1vh;
+        width: 100%;
+        background-color: #c54124;
+        border-radius: 1vh;
+        border-style: solid;
+        border-color: #f5f5dc;
+    }
+
+    .small-li {
+        font-family: 'Courier New', Courier, monospace !important;
+        color: #c54124 !important; 
+        font-size: 2.75vh !important;
+        font-weight: bold !important; 
+        text-shadow:
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
+
+    .big-li {
+        font-family: 'Courier New', Courier, monospace !important;
+        color: #c54124 !important; 
+        font-size: 3.25vh !important;
+        font-weight: bold !important; 
+        text-shadow:
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
+
+    .row {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around !important;
+    }
+
+    .col-6 {
+        width: 40%;
+        height: 100%
+    }
+
+    .col-10 {
+        width: 80%;
+    }
+
+    .outlined-bullets li::marker {
+        color: transparent; /* Hides the default bullet */
+        content: '\2022'; /* Adds the bullet back */
+        color: #c54124; /* Sets the bullet color to black */
+        text-shadow: -1px -1px 0 #f5f5dc, 1px -1px 0 #f5f5dc, -1px 1px 0 #f5f5dc, 1px 1px 0 #f5f5dc; /* Adds white outline */
+    }
+
+    ul li {
+        padding-left: 5%;
+    }
+
+    .btn {
+        color: #c54124 !important; 
+        font-size: 10vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        background-color: transparent;
+        width: 50vw;
+        height: fit-content;
+        justify-content: center;
+        border: 5px solid #c54124 !important;
+        border-radius: 3vh !important;
+        text-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+        outline: 5px solid #f5f5dc !important;
+        outline-offset: 0 !important;
+        box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
+    }
+
+    .btn:hover {
+        color: #f5f5dc !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        justify-content: center;
+        border: 5px solid #c54124 !important;
+        border-radius: 3vh !important;
+        text-shadow:
+            5px  5px 0 #c54124,
+            -1px -1px 0 #c54124,  
+            1px -1px 0 #c54124,
+            -1px  1px 0 #c54124,
+            1px  1px 0 #c54124;
+        outline: 5px solid #f5f5dc !important;
+        outline-offset: 0 !important;
+        box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
+    }
+
+    #home {
+        height: 5vh !important;
+        width: 5vh !important;
+        border: 2vh !important;
+        border-style: solid;
+        border-radius: 1vh; 
+        box-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc !important;
+    }
 }
 
-.line {
-    height: 1vh;
-    width: 100%;
-    background-color: #c54124;
-    border-radius: 1vh;
-    border-style: solid;
-    border-color: #f5f5dc;
-}
+@media only screen and (min-width: 900px) {
+    body {
+        background-color: #6c9da2 !important;
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+    }
 
-.small-li {
-    font-family: 'Courier New', Courier, monospace !important;
+    .container {
+        width: 100vw;
+        height: 100vh;
+        padding-top: 2vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    h2 {
+        color: #c54124 !important; 
+        font-size: 13vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        text-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
+
+    h3 {
     color: #c54124 !important; 
-    font-size: 2.75vh !important;
-    font-weight: bold !important; 
-    text-shadow:
-        -1px -1px 0 #f5f5dc,  
-        1px -1px 0 #f5f5dc,
-        -1px  1px 0 #f5f5dc,
-        1px  1px 0 #f5f5dc;
-}
+    font-size: 9vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        text-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
 
-.big-li {
-    font-family: 'Courier New', Courier, monospace !important;
+    h4 {
     color: #c54124 !important; 
-    font-size: 3.25vh !important;
-    font-weight: bold !important; 
-    text-shadow:
-        -1px -1px 0 #f5f5dc,  
-        1px -1px 0 #f5f5dc,
-        -1px  1px 0 #f5f5dc,
-        1px  1px 0 #f5f5dc;
-}
+    font-size: 7vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        text-shadow:
+            3px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
 
-.row {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-around !important;
-}
+    h5 {
+        font-family: 'Courier New', Courier, monospace !important;
+        color: #c54124 !important; 
+        font-size: 4vh !important;
+        font-weight: bold !important; 
+        text-shadow:
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
 
-.col-6 {
-    width: 40%;
-    height: 100%
-}
+    .line {
+        height: 1vh;
+        width: 100%;
+        background-color: #c54124;
+        border-radius: 1vh;
+        border-style: solid;
+        border-color: #f5f5dc;
+    }
 
-.col-10 {
-    width: 80%;
-}
+    .small-li {
+        font-family: 'Courier New', Courier, monospace !important;
+        color: #c54124 !important; 
+        font-size: 2.75vh !important;
+        font-weight: bold !important; 
+        text-shadow:
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
 
-.outlined-bullets li::marker {
-    color: transparent; /* Hides the default bullet */
-    content: '\2022'; /* Adds the bullet back */
-    color: #c54124; /* Sets the bullet color to black */
-    text-shadow: -1px -1px 0 #f5f5dc, 1px -1px 0 #f5f5dc, -1px 1px 0 #f5f5dc, 1px 1px 0 #f5f5dc; /* Adds white outline */
-}
+    .big-li {
+        font-family: 'Courier New', Courier, monospace !important;
+        color: #c54124 !important; 
+        font-size: 3.25vh !important;
+        font-weight: bold !important; 
+        text-shadow:
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+    }
 
-ul li {
-    padding-left: 5%;
-}
+    .row {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around !important;
+    }
 
-.btn {
-    color: #c54124 !important; 
-    font-size: 13vh !important; 
-    font-family: 'DELIRIUM NCV', sans-serif !important;
-    background-color: transparent;
-    width: 30%;
-    height: 10%;
-    justify-content: center;
-    border: 5px solid #c54124 !important;
-    border-radius: 3vh !important;
-    text-shadow:
-        5px  5px 0 #f5f5dc,
-        -1px -1px 0 #f5f5dc,  
-        1px -1px 0 #f5f5dc,
-        -1px  1px 0 #f5f5dc,
-        1px  1px 0 #f5f5dc;
-    outline: 5px solid #f5f5dc !important;
-    outline-offset: 0 !important;
-    box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
-}
+    .col-6 {
+        width: 40%;
+        height: 100%
+    }
 
-.btn:hover {
-    color: #f5f5dc !important; 
-    font-size: 13vh !important; 
-    font-family: 'DELIRIUM NCV', sans-serif !important;
-    width: 30%;
-    height: 10%;
-    justify-content: center;
-    border: 5px solid #c54124 !important;
-    border-radius: 3vh !important;
-    text-shadow:
-        5px  5px 0 #c54124,
-        -1px -1px 0 #c54124,  
-        1px -1px 0 #c54124,
-        -1px  1px 0 #c54124,
-        1px  1px 0 #c54124;
-    outline: 5px solid #f5f5dc !important;
-    outline-offset: 0 !important;
-    box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
-}
+    .col-10 {
+        width: 80%;
+    }
 
-#home {
-    height: 5vh !important;
-    width: 5vh !important;
-    border: 2vh !important;
-    border-style: solid;
-    border-radius: 1vh; 
-    box-shadow:
-        5px  5px 0 #f5f5dc,
-        -1px -1px 0 #f5f5dc,  
-        1px -1px 0 #f5f5dc,
-        -1px  1px 0 #f5f5dc,
-        1px  1px 0 #f5f5dc !important;
+    .outlined-bullets li::marker {
+        color: transparent; /* Hides the default bullet */
+        content: '\2022'; /* Adds the bullet back */
+        color: #c54124; /* Sets the bullet color to black */
+        text-shadow: -1px -1px 0 #f5f5dc, 1px -1px 0 #f5f5dc, -1px 1px 0 #f5f5dc, 1px 1px 0 #f5f5dc; /* Adds white outline */
+    }
+
+    ul li {
+        padding-left: 5%;
+    }
+
+    .btn {
+        color: #c54124 !important; 
+        font-size: 13vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        background-color: transparent;
+        width: 30%;
+        height: 10%;
+        justify-content: center;
+        border: 5px solid #c54124 !important;
+        border-radius: 3vh !important;
+        text-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc;
+        outline: 5px solid #f5f5dc !important;
+        outline-offset: 0 !important;
+        box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
+    }
+
+    .btn:hover {
+        color: #f5f5dc !important; 
+        font-size: 13vh !important; 
+        font-family: 'DELIRIUM NCV', sans-serif !important;
+        width: 30%;
+        height: 10%;
+        justify-content: center;
+        border: 5px solid #c54124 !important;
+        border-radius: 3vh !important;
+        text-shadow:
+            5px  5px 0 #c54124,
+            -1px -1px 0 #c54124,  
+            1px -1px 0 #c54124,
+            -1px  1px 0 #c54124,
+            1px  1px 0 #c54124;
+        outline: 5px solid #f5f5dc !important;
+        outline-offset: 0 !important;
+        box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
+    }
+
+    #home {
+        height: 5vh !important;
+        width: 5vh !important;
+        border: 2vh !important;
+        border-style: solid;
+        border-radius: 1vh; 
+        box-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc !important;
+    }
 }

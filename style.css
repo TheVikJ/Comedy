@@ -9,14 +9,21 @@
     }
 
     .container {
-        width: 100%;
-        height: 100vh;
+        max-width: 100vw !important;
         padding-top: 2vh;
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+
+    .col-vik {
+        width: 100vw !important;
         display: flex;
+        justify-content: center !important;
     }
 
     #vik {
-        width: 23vw; 
+        height: 40vh !important; 
         padding-top: 5vh; 
         padding-bottom: 2.5vh;
         padding-right: 2vw;
@@ -41,7 +48,7 @@
 
     h1 {
         color: #ff0000 !important; 
-        font-size: 15vh !important; 
+        font-size: 12vh !important; 
         text-shadow:
             5px  5px 0 #ffffff,
             -1px -1px 0 #ffffff,  
@@ -52,7 +59,7 @@
 
     h2 {
         color: #ff0000 !important; 
-        font-size: 13vh !important; 
+        font-size: 10vh !important; 
         font-family: 'Virgo 01', sans-serif !important;
         text-shadow:
             5px  5px 0 #ffffff,
@@ -64,7 +71,7 @@
 
     h3 {
         color: #ff0000 !important; 
-        font-size: 10vh !important; 
+        font-size: 6vh !important; 
         text-shadow:
             -1px -1px 0 #ffffff,  
             1px -1px 0 #ffffff,
@@ -82,14 +89,19 @@
     }
 
     .contact {
-        font-size: 5vh !important;
+        font-size: 8vh !important;
+        width: 100vw !important;
+        text-align: center !important;
     }
 
     .proj {
         font-size: 10vh !important;
+        width: fit-content;
+        text-align: center !important;
     }
 
     a {
+        width: 100vw !important;
         color: #ff0000 !important;
         text-decoration: none;
         text-shadow: 
@@ -110,20 +122,10 @@
 
     .row {
         display: flex;
+        max-width: 90vw !important;
+        justify-content: center !important;
         flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .vbd {
-        display: flex;
-        flex-wrap: wrap;
-        height: fit-content !important;
-        max-width: 100% !important;
-    }
-
-    .col-logo {
-        display: flex;
-        justify-content: center;
+        align-items: center !important;
     }
 }
 
