@@ -22,7 +22,7 @@
         justify-content: center !important;
     }
 
-    #vik {
+    .vik {
         height: 40vh !important; 
         padding-top: 5vh; 
         padding-bottom: 2.5vh;
@@ -129,6 +129,19 @@
         flex-wrap: wrap;
         align-items: center !important;
     }
+
+    .scrolling-banner {
+      visibility: hidden !important;
+      font-family: 'Courier New', Courier, monospace !important;
+      position: relative;
+      white-space: nowrap;
+      height: 0 !important;
+      background-color: #ff0000;
+      color: #ffffff;
+      font-size: 4vh;
+      padding: 10px 0;
+      border-bottom: 2px #ffffff;
+    }
 }
 
 @media only screen and (min-width: 900px) {
@@ -144,11 +157,18 @@
         display: flex;
     }
 
-    #vik {
-        height: 90vh; 
-        padding-top: 5vh; 
-        padding-bottom: 2.5vh;
-        padding-right: 2vw;
+    .vik {
+        width: 38vh; 
+        padding-top: 2vh; 
+        padding-bottom: 2vh;
+    }
+
+    .col-vik {
+        width: fit-content;
+    }
+
+    .col {
+        width: 100vh;
     }
 
     #logo {
@@ -170,7 +190,7 @@
 
     h1 {
         color: #ff0000 !important; 
-        font-size: 43vh !important; 
+        font-size: 35vh !important; 
         text-shadow:
             5px  5px 0 #ffffff,
             -1px -1px 0 #ffffff,  
@@ -242,5 +262,31 @@
         display: flex;
         justify-content: space-around !important;
         flex-wrap: wrap;
+    }
+
+    .scrolling-banner {
+      font-family: 'Courier New', Courier, monospace !important;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      background-color: #ff0000;
+      color: #ffffff;
+      font-size: 4vh;
+      padding: 10px 0;
+      border-bottom: 2px #ffffff;
+    }
+    .scrolling-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 11s linear infinite;
+    }
+    @keyframes scroll-left {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
     }
 }

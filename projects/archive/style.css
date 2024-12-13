@@ -94,6 +94,7 @@
         display: flex;
         width: 100%;
         justify-content: space-around !important;
+        padding-top: 1vh;
     }
 
     #home {

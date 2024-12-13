@@ -1,0 +1,145 @@
+@media only screen and (max-width: 899px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        padding-top: 2vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    body {
+        background-color: #9a603c !important;
+        background-size: 20vh;
+        background-image: url(images/corkboard.jpg);
+        font-family: 'Courier New', Courier, monospace !important;
+    }
+
+    .typewriter {
+        font-size: 2.5vh;
+        font-weight: 600;
+        color: #101010;
+        background-color: white;
+        padding: 2vw;
+    }
+
+    .folder {
+        background-color: #f1d592;
+        padding: 2vw;
+    }
+
+    .col {
+        width: 90%;
+    }
+
+    .row {
+        display: flex;
+        padding-bottom: 2vh;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around !important;
+    }
+
+    #home {
+        height: 5vh !important;
+        width: 5vh !important;
+        border: 2vh !important;
+        border-style: solid;
+        border-radius: 1vh; 
+        box-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc !important;
+    }
+
+    a {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+
+    #thumbnail {
+        width: 100%;
+    }
+
+    h3 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-weight: 700 !important;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        padding-top: 2vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    body {
+        background-color: #9a603c !important;
+        background-size: 20vh;
+        background-image: url(images/corkboard.jpg);
+        font-family: 'Courier New', Courier, monospace !important;
+    }
+
+    .typewriter {
+        font-size: 2.5vh;
+        font-weight: 600;
+        color: #101010;
+        background-color: white;
+        padding: 2vw;
+    }
+
+    .folder {
+        background-color: #f1d592;
+        padding: 2vw;
+    }
+
+    .col {
+        width: 60%;
+    }
+
+    .row {
+        display: flex;
+        padding-bottom: 2vh;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around !important;
+    }
+
+    #home {
+        height: 5vh !important;
+        width: 5vh !important;
+        border: 2vh !important;
+        border-style: solid;
+        border-radius: 1vh; 
+        box-shadow:
+            5px  5px 0 #f5f5dc,
+            -1px -1px 0 #f5f5dc,  
+            1px -1px 0 #f5f5dc,
+            -1px  1px 0 #f5f5dc,
+            1px  1px 0 #f5f5dc !important;
+    }
+
+    a {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+
+    #thumbnail {
+        width: 100%;
+    }
+
+    h3 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-weight: 700 !important;
+    }
+}
