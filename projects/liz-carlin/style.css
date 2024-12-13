@@ -4,7 +4,7 @@
 
 @media only screen and (max-width: 899px) {
     body {
-        background-color: #6c9da2 !important;
+        background-color: #41686c !important;
         font-family: 'DELIRIUM NCV', sans-serif !important;
     }
 
@@ -17,7 +17,7 @@
     }
 
     h2 {
-        color: #c54124 !important; 
+        color: #ff481f !important; 
         font-size: 13vh !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         text-shadow:
@@ -29,7 +29,7 @@
     }
 
     h3 {
-    color: #c54124 !important; 
+    color: #ff481f !important; 
     font-size: 9vh !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         text-shadow:
@@ -41,7 +41,7 @@
     }
 
     h4 {
-    color: #c54124 !important; 
+    color: #ff481f !important; 
     font-size: 7vh !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         text-shadow:
@@ -53,48 +53,30 @@
     }
 
     h5 {
-        font-family: 'Courier New', Courier, monospace !important;
-        color: #c54124 !important; 
-        font-size: 4vh !important;
-        font-weight: bold !important; 
-        text-shadow:
-            -1px -1px 0 #f5f5dc,  
-            1px -1px 0 #f5f5dc,
-            -1px  1px 0 #f5f5dc,
-            1px  1px 0 #f5f5dc;
+        font-family: monospace !important;
+        color: #f5f5dc !important; 
+        font-size: 3vh !important;
     }
 
     .line {
         height: 1vh;
         width: 100%;
-        background-color: #c54124;
+        background-color: #ff481f;
         border-radius: 1vh;
         border-style: solid;
         border-color: #f5f5dc;
     }
 
     .small-li {
-        font-family: 'Courier New', Courier, monospace !important;
-        color: #c54124 !important; 
+        font-family: monospace !important;
+        color: #f5f5dc !important; 
         font-size: 2.75vh !important;
-        font-weight: bold !important; 
-        text-shadow:
-            -1px -1px 0 #f5f5dc,  
-            1px -1px 0 #f5f5dc,
-            -1px  1px 0 #f5f5dc,
-            1px  1px 0 #f5f5dc;
     }
 
     .big-li {
-        font-family: 'Courier New', Courier, monospace !important;
-        color: #c54124 !important; 
-        font-size: 3.25vh !important;
-        font-weight: bold !important; 
-        text-shadow:
-            -1px -1px 0 #f5f5dc,  
-            1px -1px 0 #f5f5dc,
-            -1px  1px 0 #f5f5dc,
-            1px  1px 0 #f5f5dc;
+        font-family: monospace !important;
+        color: #f5f5dc !important; 
+        font-size: 3vh !important;
     }
 
     .row {
@@ -105,7 +87,7 @@
     }
 
     .col-6 {
-        width: 40%;
+        width: 100%;
         height: 100%
     }
 
@@ -113,10 +95,15 @@
         width: 80%;
     }
 
+    .col {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
     .outlined-bullets li::marker {
         color: transparent; /* Hides the default bullet */
         content: '\2022'; /* Adds the bullet back */
-        color: #c54124; /* Sets the bullet color to black */
+        color: #ff481f; /* Sets the bullet color to black */
         text-shadow: -1px -1px 0 #f5f5dc, 1px -1px 0 #f5f5dc, -1px 1px 0 #f5f5dc, 1px 1px 0 #f5f5dc; /* Adds white outline */
     }
 
@@ -125,14 +112,14 @@
     }
 
     .btn {
-        color: #c54124 !important; 
+        color: #ff481f !important; 
         font-size: 10vh !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         background-color: transparent;
         width: 50vw;
         height: fit-content;
         justify-content: center;
-        border: 5px solid #c54124 !important;
+        border: 5px solid #ff481f !important;
         border-radius: 3vh !important;
         text-shadow:
             5px  5px 0 #f5f5dc,
@@ -149,14 +136,14 @@
         color: #f5f5dc !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         justify-content: center;
-        border: 5px solid #c54124 !important;
+        border: 5px solid #ff481f !important;
         border-radius: 3vh !important;
         text-shadow:
-            5px  5px 0 #c54124,
-            -1px -1px 0 #c54124,  
-            1px -1px 0 #c54124,
-            -1px  1px 0 #c54124,
-            1px  1px 0 #c54124;
+            5px  5px 0 #ff481f,
+            -1px -1px 0 #ff481f,  
+            1px -1px 0 #ff481f,
+            -1px  1px 0 #ff481f,
+            1px  1px 0 #ff481f;
         outline: 5px solid #f5f5dc !important;
         outline-offset: 0 !important;
         box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
@@ -179,7 +166,7 @@
 
 @media only screen and (min-width: 900px) {
     body {
-        background-color: #6c9da2 !important;
+        background-color: #41686c !important;
         font-family: 'DELIRIUM NCV', sans-serif !important;
     }
 
@@ -192,7 +179,7 @@
     }
 
     h2 {
-        color: #c54124 !important; 
+        color: #ff481f !important; 
         font-size: 13vh !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         text-shadow:
@@ -204,7 +191,7 @@
     }
 
     h3 {
-    color: #c54124 !important; 
+    color: #ff481f !important; 
     font-size: 9vh !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         text-shadow:
@@ -216,7 +203,7 @@
     }
 
     h4 {
-    color: #c54124 !important; 
+    color: #ff481f !important; 
     font-size: 7vh !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         text-shadow:
@@ -228,48 +215,30 @@
     }
 
     h5 {
-        font-family: 'Courier New', Courier, monospace !important;
-        color: #c54124 !important; 
-        font-size: 4vh !important;
-        font-weight: bold !important; 
-        text-shadow:
-            -1px -1px 0 #f5f5dc,  
-            1px -1px 0 #f5f5dc,
-            -1px  1px 0 #f5f5dc,
-            1px  1px 0 #f5f5dc;
+        font-family: monospace !important;
+        color: #f5f5dc !important; 
+        font-size: 3.25vh !important;
     }
 
     .line {
         height: 1vh;
         width: 100%;
-        background-color: #c54124;
+        background-color: #ff481f;
         border-radius: 1vh;
         border-style: solid;
         border-color: #f5f5dc;
     }
 
     .small-li {
-        font-family: 'Courier New', Courier, monospace !important;
-        color: #c54124 !important; 
-        font-size: 2.75vh !important;
-        font-weight: bold !important; 
-        text-shadow:
-            -1px -1px 0 #f5f5dc,  
-            1px -1px 0 #f5f5dc,
-            -1px  1px 0 #f5f5dc,
-            1px  1px 0 #f5f5dc;
+        font-family: monospace !important;
+        color: #f5f5dc !important; 
+        font-size: 2.75vh !important; 
     }
 
     .big-li {
-        font-family: 'Courier New', Courier, monospace !important;
-        color: #c54124 !important; 
+        font-family: monospace !important;
+        color: #f5f5dc !important; 
         font-size: 3.25vh !important;
-        font-weight: bold !important; 
-        text-shadow:
-            -1px -1px 0 #f5f5dc,  
-            1px -1px 0 #f5f5dc,
-            -1px  1px 0 #f5f5dc,
-            1px  1px 0 #f5f5dc;
     }
 
     .row {
@@ -285,13 +254,17 @@
     }
 
     .col-10 {
-        width: 80%;
+        width: 100%;
+    }
+
+    .col {
+        max-width: 70%;
     }
 
     .outlined-bullets li::marker {
         color: transparent; /* Hides the default bullet */
         content: '\2022'; /* Adds the bullet back */
-        color: #c54124; /* Sets the bullet color to black */
+        color: #ff481f; /* Sets the bullet color to black */
         text-shadow: -1px -1px 0 #f5f5dc, 1px -1px 0 #f5f5dc, -1px 1px 0 #f5f5dc, 1px 1px 0 #f5f5dc; /* Adds white outline */
     }
 
@@ -300,14 +273,14 @@
     }
 
     .btn {
-        color: #c54124 !important; 
+        color: #ff481f !important; 
         font-size: 13vh !important; 
         font-family: 'DELIRIUM NCV', sans-serif !important;
         background-color: transparent;
-        width: 30%;
+        width: 30vw;
         height: 10%;
         justify-content: center;
-        border: 5px solid #c54124 !important;
+        border: 5px solid #ff481f !important;
         border-radius: 3vh !important;
         text-shadow:
             5px  5px 0 #f5f5dc,
@@ -322,19 +295,14 @@
 
     .btn:hover {
         color: #f5f5dc !important; 
-        font-size: 13vh !important; 
-        font-family: 'DELIRIUM NCV', sans-serif !important;
-        width: 30%;
-        height: 10%;
-        justify-content: center;
-        border: 5px solid #c54124 !important;
+        border: 5px solid #ff481f !important;
         border-radius: 3vh !important;
         text-shadow:
-            5px  5px 0 #c54124,
-            -1px -1px 0 #c54124,  
-            1px -1px 0 #c54124,
-            -1px  1px 0 #c54124,
-            1px  1px 0 #c54124;
+            5px  5px 0 #ff481f,
+            -1px -1px 0 #ff481f,  
+            1px -1px 0 #ff481f,
+            -1px  1px 0 #ff481f,
+            1px  1px 0 #ff481f;
         outline: 5px solid #f5f5dc !important;
         outline-offset: 0 !important;
         box-shadow: 0 0 0 5px #f5f5dc inset, 0 0 0 5px #f5f5dc !important;
