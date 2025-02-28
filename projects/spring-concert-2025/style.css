@@ -1,0 +1,70 @@
+    .container {
+        width: 100vw;
+        height: 100vh;
+        padding-top: 2vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    body {
+        background-color: #212121 !important;
+        background-size: 20vh;
+        background-image: url(images/corkboard.jpg);
+        font-family: 'Courier New', Courier, monospace !important;
+    }
+
+    .maintext {
+        font-size: 2vh;
+        font-weight: 600;
+        color: #ffffff;
+        background-color: #212121;
+        padding: 2vw;
+    }
+
+    .textbox {
+        background-color: #6f4ea0;
+        padding: 2vw;
+    }
+
+    .col {
+        width: 60%;
+    }
+
+    .row {
+        display: flex;
+        padding-bottom: 2vh;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around !important;
+    }
+
+    #home {
+        height: 5vh !important;
+        width: 5vh !important;
+        border: 2vh !important;
+        border-style: solid;
+        border-radius: 1vh; 
+        box-shadow:
+            5px  5px 0 #ffffff,
+            -1px -1px 0 #ffffff,  
+            1px -1px 0 #ffffff,
+            -1px  1px 0 #ffffff,
+            1px  1px 0 #ffffff !important;
+    }
+
+    a {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+
+    #thumbnail {
+        width: 100%;
+    }
+
+    h3 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-weight: 700 !important;
+    }
