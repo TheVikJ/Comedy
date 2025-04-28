@@ -1,0 +1,117 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+
+@media only screen and (min-width: 900px) {
+    body 
+    {
+        background-color: #AD8762 !important;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    }
+
+    .container {
+        width: 45vw !important;
+        padding-top: 3vh;
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .title {
+        width: 98vw;
+        padding-top: 3vh;
+        display: flex;
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    h1 {
+        color: #ffffff !important;
+        font-size: 50px !important;
+        font-weight: 800 !important;
+    }
+
+    .subtitle {
+        color: #ffffff;
+        font-size: 30px !important;
+        font-weight: 600 !important;
+    }
+
+    #home {
+        height: 5vh !important;
+        width: 5vh !important;
+        border: 2vh !important;
+        border-style: solid;
+        border-radius: 1vh; 
+        box-shadow:
+            5px  5px 0 #ffffff,
+            -1px -1px 0 #ffffff,  
+            1px -1px 0 #ffffff,
+            -1px  1px 0 #ffffff,
+            1px  1px 0 #ffffff !important;
+    }
+
+    .story {
+        text-indent: 2em;
+        background-color: #ffffff;
+        padding: 2vh;
+        font-size: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    body 
+    {
+        background-color: #AD8762 !important;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    }
+
+    .container {
+        width: 90vw !important;
+        padding-top: 3vh;
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .title {
+        width: 98vw;
+        padding-top: 3vh;
+        display: flex;
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    h1 {
+        color: #ffffff !important;
+        font-size: 50px !important;
+        font-weight: 800 !important;
+    }
+
+    .subtitle {
+        color: #ffffff;
+        font-size: 30px !important;
+        font-weight: 600 !important;
+    }
+
+    #home {
+        height: 5vh !important;
+        width: 5vh !important;
+        border: 2vh !important;
+        border-style: solid;
+        border-radius: 1vh; 
+        box-shadow:
+            5px  5px 0 #ffffff,
+            -1px -1px 0 #ffffff,  
+            1px -1px 0 #ffffff,
+            -1px  1px 0 #ffffff,
+            1px  1px 0 #ffffff !important;
+    }
+
+    .story {
+        text-indent: 2em;
+        background-color: #ffffff;
+        padding: 2vh;
+        font-size: 20px !important;
+    }
+}
