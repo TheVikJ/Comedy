@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>the warehouse — vikramaditya jaisingh</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+      .form-page {
+        font-family: 'Special+Elite', 'Courier New', Courier, monospace;
+        max-width: 760px;
+        margin: 0 auto;
+        background: #f5f0e1;
+        border: 2px solid #222;
+        padding: 48px 40px 60px;
+        position: relative;
+        box-shadow: 4px 4px 0px #aaa;
+        color: #1a1a1a;
+        line-height: 1.7;
+      }
+
+      .form-page * {
+        font-family: 'Special Elite', 'Courier New', Courier, monospace;
+      }
+
+      .form-header {
+        text-align: center;
+        border-bottom: 3px double #222;
+        padding-bottom: 16px;
+        margin-bottom: 28px;
+      }
+
+      .form-header h2 {
+        font-size: clamp(20px, 5vw, 32px);
+        letter-spacing: 6px;
+        margin: 0 0 4px;
+        font-weight: 900;
+      }
+
+      .form-header p {
+        font-size: 12px;
+        margin: 2px 0;
+        letter-spacing: 2px;
+        opacity: 0.7;
+      }
+
+      .form-number {
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        font-size: 11px;
+        opacity: 0.5;
+      }
+
+      .field-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+
+      .field {
+        flex: 1;
+        min-width: 180px;
+      }
+
+      .field-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.6;
+        margin-bottom: 2px;
+      }
+
+      .field-value {
+        border-bottom: 1px dotted #555;
+        padding: 2px 4px 4px;
+        font-size: 15px;
+        min-height: 22px;
+      }
+
+      .field-value.handwritten {
+        font-style: italic;
+      }
+
+      .section-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        opacity: 0.6;
+        margin-top: 32px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #bbb;
+        padding-bottom: 4px;
+      }
+
+      .transcript p {
+        font-size: 14px;
+        margin: 0 0 16px;
+        text-indent: 28px;
+        text-align: left;
+      }
+
+      .transcript p:first-child {
+        text-indent: 0;
+      }
+
+      .checkbox-row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin: 6px 0;
+        font-size: 13px;
+      }
+
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .box {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        border: 1.5px solid #333;
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .box.checked::after {
+        content: '✕';
+        position: absolute;
+        top: -4px;
+        left: 1px;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .stamp {
+        position: absolute;
+        top: 60px;
+        right: 40px;
+        border: 4px solid #c0392b;
+        color: #c0392b;
+        padding: 6px 18px;
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: 4px;
+        transform: rotate(12deg);
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      .sig-area {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .sig-block {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .sig-line {
+        border-bottom: 1px solid #333;
+        height: 30px;
+        margin-bottom: 4px;
+      }
+
+      .sig-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+
+      .coffee-stain {
+        position: absolute;
+        bottom: 80px;
+        left: -20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 8px solid rgba(101, 67, 33, 0.12);
+        pointer-events: none;
+      }
+
+      .coffee-stain-inner {
+        position: absolute;
+        bottom: 96px;
+        left: -4px;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 5px solid rgba(101, 67, 33, 0.07);
+        pointer-events: none;
+      }
+
+      .redacted {
+        background: #1a1a1a;
+        color: #1a1a1a;
+        padding: 0 3px;
+        user-select: none;
+      }
+
+      @media (max-width: 600px) {
+        .form-page {
+          padding: 28px 20px 40px;
+          margin: 0 -10px;
+        }
+        .stamp {
+          right: 16px;
+          top: 50px;
+          font-size: 16px;
+        }
+        .field-row {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="/sockson.html">← work</a>
+        <a href="/index.html">home</a>
+      </div>
+
+      <div class="form-page">
+
+        <div class="form-number">NO. 0000000001</div>
+
+        <div class="stamp">RECEIVED</div>
+
+        <div class="form-header">
+          <h2>INTAKE FORM</h2>
+          <p>department of discontinued existences</p>
+          <p>the warehouse — processing division</p>
+        </div>
+
+        <!-- metadata fields -->
+        <div class="field-row">
+          <div class="field">
+            <div class="field-label">Item Name</div>
+            <div class="field-value handwritten">The Warehouse</div>
+          </div>
+          <div class="field">
+            <div class="field-label">Item Type</div>
+            <div class="field-value handwritten">Short Story</div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <div class="field-label">Creator</div>
+            <div class="field-value handwritten">Vikramaditya Jaisingh</div>
+          </div>
+          <div class="field">
+            <div class="field-label">Duration of Existence</div>
+            <div class="field-value handwritten">~2 years (est.)</div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <div class="field-label">Date of Intake</div>
+            <div class="field-value handwritten">January 2025</div>
+          </div>
+          <div class="field">
+            <div class="field-label">Intake Officer</div>
+            <div class="field-value handwritten"><span class="redacted">CLASSIFIED</span></div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <div class="field-label">Cause of Discontinuation</div>
+            <div class="checkbox-row">
+              <span class="checkbox-item"><span class="box"></span> Censorship</span>
+              <span class="checkbox-item"><span class="box"></span> Destruction</span>
+              <span class="checkbox-item"><span class="box"></span> Forgotten</span>
+              <span class="checkbox-item"><span class="box checked"></span> Laziness</span>
+              <span class="checkbox-item"><span class="box"></span> Other</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <div class="field-label">Status</div>
+            <div class="field-value handwritten">Indefinite</div>
+          </div>
+          <div class="field">
+            <div class="field-label">Realization Probability</div>
+            <div class="field-value handwritten">Low</div>
+          </div>
+        </div>
+
+        <!-- transcript -->
+        <div class="section-label">Intake Session Transcript</div>
+
+        <div class="transcript">
+          <p>Hey, I'm sorry for the wait. I was just with the most interesting new origami model and that meeting ran a little late. Tragic story, but I'm sure you know how that is, right? Oh, I forgot to go through that whole introduction thing and I'm sure you're full of questions. Let me just find my notes and we'll get that started. It's been so swamped here. It's crazy how many of you are coming in here every day. Ah, there we go, I found it.</p>
+
+          <p>Greetings. I regret to inform you that your existence has been discontinued and you will be spending an indefinite amount of time here. This realm of ideas is "The Warehouse" and it is my privilege to blah-blah-blah. Look, at this point I usually go off script cause it's just faster and easier and more efficient, and I guess I've always felt that it was ironically soulless. TL;DR, this place, The Warehouse, is where ideas go when they go extinct and you're here because you've been forgotten, lost to time, or otherwise destroyed. Who would've thought, am I right? Relax. I'm just kidding.</p>
+
+          <p>Good question! And actually really popular. I should probably start including that in the introduction. You were around for about 20 years, more or less. I know, it might not seem like a long time, but that's 99.92% longer than the others. You'd be surprised how few of you make it through the sausage press and come out the other end. You're really lucky. You're special. And I don't just say that to anyone, you know.</p>
+
+          <p>Well, I guess there's no way to prove it to you, but trust me, most of these chumps last a couple seconds and they're in here faster than you can say "sayonara." That's what happened to that origami model. Too bad. Poor thing materialized for a quick moment, but its creator decided to focus his attention on a different model instead. She was a centerfold, like the first step of his transient creation.</p>
+
+          <p>Of course, not all of you guys die like that. Some are removed gradually over time like you or are forcefully erased. You see the same stuff a lot of the time with this gig. Censorship is a big killer. The CIA is ruthlessly efficient. And we've always gotten a bunch of you every war. You wanna know the secret to Greek fire? Greek matches. Haha! I'm sorry, that joke's almost as old as time up here. The punchline was Greek flint and steel back then. It's actually just magnesium, quicklime, sulfur, petroleum, and some other stuff, but the chemistry can get pretty complicated. One wrong shake and all your hard work goes up in a flurry of meaningless sparks.</p>
+
+          <p>Hmm. I don't know. I find it funny how the humans try to "celebrate the divine spark of creation" and the minute some dude shakes it all up, they decide they don't like it any more. It's like they fetishize the idea of change more than they actually try making any change at all. They want to grow their little bubbles and when they inevitably burst, they run around frantically and crucify the burster.</p>
+
+          <p>But they do come up with some fun stuff. You won't believe how crazy some of the crap that comes in here is, even if I told you. If you look past the heaps of personalized porn, countless still-life paintings of animals, and short films about writer's block, you get stuff like "Wheel II." Guy in the 19th Century, peak of the industrial revolution, literally reinvented the wheel. Died in a house fire before he could show any of his designs to anyone, and they died with him.</p>
+
+          <p>Also, shebble. That's a word for when you have a pebble stuck in your shoe. Can't say it's the most creative but it would've been a useful word. It started as an accident, transitioned to inside joke, and then somersaulted out of collective memory.</p>
+
+          <p>Oh, I apologize for the rambling. Sometimes I just open the floodgate and it doesn't close until someone else pulls me back. And I'm sure you have more to ask me. Ah, yes, good catch. You might've also noticed that in the introduction thing they make us read out, I did say you were here indefinitely, and not necessarily forever. The thing is, this place is called The Warehouse because it's basically more storage locker, less graveyard. Sure, you might not exist in reality or even in someone's imagination right now, but if your creator or some other person comes up with something we already have, we send it back down.</p>
+
+          <p>But I have to mention, before I get too far, that it's not as common as it used to be, so don't get your hopes up too high. A lot more stuff has been coming up here recently than in a while, but we go through our phases. You've got some stuff like written languages, Gutenberg, and the internet that significantly reduced your mortality rate. And on the other hand, you've got your language extinctions, your genocides, and your book burnings. They bring unimaginable amounts. We still throw darts at a picture of Pol Pot in the break room sometimes. He really did a number. You can't imagine the paperwork.</p>
+
+          <p>Some of the others think this current massacre is just another downward phase, but I don't buy it, honestly. It's different. The realization rate of any idea has plummeted far beneath the usual. And censorship isn't as bad as it used to be, either. I think it's something beyond that. I don't know. Personally, I think this whole thing is… unprecedented. There's this new epidemic of hopelessness making rounds with the humans. Is that why they don't go through with anything any more? Who knows. I think they've all evolved just enough to see how unhappy they are but not enough to change it. It makes me a little sad, I guess. They climbed the pyramid to the top, but nobody told them what to do up there. But I do think that the humans are going to make it out of this. Blind optimism? Maybe. But I got serious money on it, so let's hope for the best. Fingers crossed.</p>
+
+          <p>Oh, would you look at the time? I'm almost late for my next meeting and we just need to get through a couple formalities and unfortunately, some paperwork. Hope the next one doesn't talk my ear off like you did. No, I'm just kidding, you've been great. Here's the form, and you just need to sign there and there. I forgot my manners, excuse me, what kind are you? Oh, a short story, that's fun. Guess someone was too lazy to write something valuable, huh? Just some short story humor. There we go. Oh, you've got a great name, and very apt. Welcome to The Warehouse, The Warehouse! I hope you enjoy your stay.</p>
+        </div>
+
+        <!-- signatures -->
+        <div class="sig-area">
+          <div class="sig-block">
+            <div class="sig-line" style="font-style: italic; font-size: 14px; padding-top: 8px;">The Warehouse</div>
+            <div class="sig-label">Item Signature</div>
+          </div>
+          <div class="sig-block">
+            <div class="sig-line" style="font-style: italic; font-size: 14px; padding-top: 8px;"><span class="redacted">CLASSIFIED</span></div>
+            <div class="sig-label">Intake Officer Signature</div>
+          </div>
+        </div>
+
+        <!-- stains -->
+        <div class="coffee-stain"></div>
+        <div class="coffee-stain-inner"></div>
+
+      </div>
+
+      <footer style="margin-top: 40px;">© vikramaditya jaisingh</footer>
+    </div>
+  </body>
+</html>
