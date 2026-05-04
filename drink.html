@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>vik's blue drink — vikramaditya jaisingh</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link href="https://fonts.cdnfonts.com/css/delirium-ncv" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/virgo-01" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #008597;
+      }
+
+      .drink-page {
+        font-family: 'DELIRIUM NCV', sans-serif;
+        color: #ff0000;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .drink-page a {
+        color: #ff0000;
+      }
+
+      .stroke {
+        text-shadow:
+          -2px -2px 0 #ffffff,
+          2px -2px 0 #ffffff,
+          -2px 2px 0 #ffffff,
+          2px 2px 0 #ffffff;
+      }
+
+      .stroke-heavy {
+        text-shadow:
+          -3px -3px 0 #ffffff,
+          3px -3px 0 #ffffff,
+          -3px 3px 0 #ffffff,
+          3px 3px 0 #ffffff,
+          0 -3px 0 #ffffff,
+          0 3px 0 #ffffff,
+          -3px 0 0 #ffffff,
+          3px 0 0 #ffffff;
+      }
+
+      /* ——— logo ——— */
+      .logo-section {
+        padding: 30px 0 10px;
+      }
+
+      .logo-section img {
+        width: min(500px, 80vw);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* ——— headline flash ——— */
+      .headline {
+        font-size: clamp(36px, 10vw, 80px);
+        font-weight: 900;
+        margin: 20px 0 0;
+        animation: flashScale 1.2s ease-in-out infinite;
+      }
+
+      @keyframes flashScale {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.06); }
+      }
+
+      /* ——— divider ——— */
+      .red-line {
+        height: 6px;
+        background: #ff0000;
+        margin: 20px 0;
+      }
+
+      /* ——— recipe ——— */
+      .recipe-section {
+        padding: 10px 0 20px;
+      }
+
+      .recipe-label {
+        font-family: 'Virgo 01', sans-serif;
+        font-size: clamp(20px, 5vw, 36px);
+        margin-bottom: 20px;
+      }
+
+      .ingredient {
+        position: relative;
+        margin-bottom: 16px;
+        opacity: 0;
+        animation: slideIn 0.6s ease forwards;
+      }
+
+      .ingredient:nth-child(1) { animation-delay: 0.3s; }
+      .ingredient:nth-child(2) { animation-delay: 0.7s; }
+      .ingredient:nth-child(3) { animation-delay: 1.1s; }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .ingredient-pct {
+        font-size: clamp(48px, 12vw, 100px);
+        font-weight: 900;
+        line-height: 1;
+        display: block;
+      }
+
+      .ingredient-name {
+        font-family: 'Virgo 01', sans-serif;
+        font-size: clamp(16px, 4vw, 28px);
+        display: block;
+        margin-top: -4px;
+      }
+
+      /* ——— badges ——— */
+      .badges {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 10px 0 20px;
+      }
+
+      .badge {
+        border: 3px solid #ff0000;
+        padding: 8px 16px;
+        font-size: clamp(10px, 2.5vw, 16px);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        animation: badgePulse 2s ease-in-out infinite;
+        background: rgba(255, 0, 0, 0.08);
+      }
+
+      .badge:nth-child(2) { animation-delay: 0.5s; }
+      .badge:nth-child(3) { animation-delay: 1s; }
+
+      @keyframes badgePulse {
+        0%, 100% { border-color: #ff0000; color: #ff0000; }
+        50% { border-color: #ffffff; color: #ffffff; }
+      }
+
+      /* ——— ticker ——— */
+      .ticker-wrap {
+        overflow: hidden;
+        background: #ff0000;
+        padding: 8px 0;
+        margin: 0;
+      }
+
+      .ticker {
+        display: flex;
+        white-space: nowrap;
+        animation: tickerScroll 20s linear infinite;
+        width: fit-content;
+      }
+
+      .ticker span {
+        color: #ffffff;
+        font-size: clamp(14px, 3vw, 22px);
+        padding: 0 40px;
+        font-family: 'Virgo 01', sans-serif;
+      }
+
+      @keyframes tickerScroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+
+      /* ——— poster ——— */
+      .poster-section {
+        padding: 30px 0;
+        position: relative;
+      }
+
+      .poster-section img {
+        width: min(700px, 90vw);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border: 4px solid #ff0000;
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+      }
+
+      .tv-frame {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tv-scanlines {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 0, 0, 0.04) 2px,
+          rgba(0, 0, 0, 0.04) 4px
+        );
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      /* ——— CTA ——— */
+      .cta-section {
+        padding: 10px 0 20px;
+      }
+
+      .cta-main {
+        font-size: clamp(28px, 8vw, 64px);
+        font-weight: 900;
+        margin: 0;
+        animation: flashScale 0.8s ease-in-out infinite;
+      }
+
+      .cta-sub {
+        font-family: 'Virgo 01', sans-serif;
+        font-size: clamp(14px, 3.5vw, 24px);
+        margin: 10px 0 0;
+        opacity: 0.9;
+      }
+
+      .fine-print {
+        font-family: 'Virgo 01', sans-serif;
+        font-size: clamp(8px, 1.8vw, 11px);
+        margin: 24px auto 0;
+        max-width: 600px;
+        line-height: 1.4;
+        opacity: 0.5;
+        color: #ffffff;
+        text-shadow: none;
+      }
+
+      /* ——— stars ——— */
+      .stars {
+        font-size: clamp(20px, 5vw, 40px);
+        margin: 16px 0;
+        letter-spacing: 8px;
+      }
+
+      @media (max-width: 600px) {
+        .badges {
+          gap: 10px;
+        }
+        .badge {
+          padding: 6px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a style="color: #ffffff !important;" href="/sockson.html">← work</a>
+        <a style="color: #ffffff !important;" href="/index.html">home</a>
+      </div>
+    </div>
+
+    <div class="drink-page">
+
+      <!-- logo -->
+      <div class="logo-section">
+        <img src="/images/drink/vbd-logo.png" alt="Vik's Blue Drink" />
+      </div>
+
+      <!-- headline -->
+      <p class="headline stroke-heavy">THE DRINK OF THE CENTURY</p>
+
+      <div class="stars stroke">✦ ✦ ✦ ✦ ✦</div>
+
+      <div class="container">
+        <div class="red-line"></div>
+      </div>
+
+      <!-- recipe -->
+      <div class="recipe-section">
+        <p class="recipe-label stroke">THE SECRET FORMULA</p>
+
+        <div class="ingredient">
+          <span class="ingredient-pct stroke-heavy">25%</span>
+          <span class="ingredient-name stroke">Blue Powerade</span>
+        </div>
+
+        <div class="ingredient">
+          <span class="ingredient-pct stroke-heavy">25%</span>
+          <span class="ingredient-name stroke">Minute Maid Lemonade</span>
+        </div>
+
+        <div class="ingredient">
+          <span class="ingredient-pct stroke-heavy">50%</span>
+          <span class="ingredient-name stroke">Seagram's Ginger Ale</span>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="red-line"></div>
+      </div>
+
+      <!-- badges -->
+      <div class="badges">
+        <div class="badge">100% Satisfaction Guaranteed</div>
+        <div class="badge">Zero Nutritional Value</div>
+        <div class="badge">Clinically Untested</div>
+      </div>
+
+      <!-- ticker -->
+      <div class="ticker-wrap">
+        <div class="ticker">
+          <span>ORDER NOW</span>
+          <span>★</span>
+          <span>REFRESHING</span>
+          <span>★</span>
+          <span>ELECTRIC</span>
+          <span>★</span>
+          <span>CARBONATED</span>
+          <span>★</span>
+          <span>BLUE</span>
+          <span>★</span>
+          <span>LIFE-CHANGING</span>
+          <span>★</span>
+          <span>PROBABLY SAFE</span>
+          <span>★</span>
+          <span>ORDER NOW</span>
+          <span>★</span>
+          <span>REFRESHING</span>
+          <span>★</span>
+          <span>ELECTRIC</span>
+          <span>★</span>
+          <span>CARBONATED</span>
+          <span>★</span>
+          <span>BLUE</span>
+          <span>★</span>
+          <span>LIFE-CHANGING</span>
+          <span>★</span>
+          <span>PROBABLY SAFE</span>
+          <span>★</span>
+        </div>
+      </div>
+
+      <!-- poster -->
+      <div class="poster-section">
+        <p class="recipe-label stroke" style="margin-bottom: 16px;">AS SEEN ON TV</p>
+        <div class="tv-frame">
+          <img src="/images/drink/vbd-poster.png" alt="Vik's Blue Drink poster" />
+          <div class="tv-scanlines"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="red-line"></div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <p class="cta-main stroke-heavy">MIX IT NOW</p>
+        <p class="cta-sub stroke">YOU ALREADY HAVE EVERYTHING YOU NEED</p>
+        <p class="cta-sub stroke" style="font-family: 'DELIRIUM NCV', sans-serif; font-size: clamp(10px, 2.5vw, 16px); margin-top: 6px;">I AM SERIOUS</p>
+
+        <p class="fine-print">
+          vik's blue drink is not a real product. vik's blue drink is not endorsed by powerade, minute maid, or seagram's. vik's blue drink has not been evaluated by the fda. vik's blue drink is not intended to diagnose, treat, cure, or prevent any disease. side effects may include refreshment, temporary happiness, and a blue tongue. consume at your own risk. no refunds. no returns. no regrets.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <footer style="margin-top: 20px; color: #ffffff">© vikramaditya jaisingh</footer>
+    </div>
+  </body>
+</html>
