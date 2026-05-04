@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>the liz carlin show — vikramaditya jaisingh</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background: #FFFFFF;
+      }
+
+      .corkboard {
+        background:
+          repeating-conic-gradient(#c4a35a 0% 25%, transparent 0% 50%) 0 0 / 4px 4px;
+          /*linear-gradient(135deg, #c9a84c 0%, #d4b367 20%, #c19a3e 40%, #d6b96e 60%, #c4a044 80%, #d2b460 100%);*/
+        border: 12px solid #5a3a1a;
+        box-shadow: inset 0 0 30px rgba(0,0,0,0.3), 6px 6px 0 #3d2510;
+        padding: 40px 30px 60px;
+        margin: 10px 0 0;
+        position: relative;
+        min-height: 600px;
+      }
+
+      .card {
+        background: #fdf6e3;
+        padding: 20px 22px 18px;
+        box-shadow: 2px 3px 8px rgba(0,0,0,0.25);
+        position: relative;
+        margin-bottom: 24px;
+        line-height: 1.5;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+        z-index: 2;
+      }
+
+      .pin-red::before { background: radial-gradient(circle at 35% 35%, #ff6b6b, #cc0000); }
+      .pin-blue::before { background: radial-gradient(circle at 35% 35%, #6ba3ff, #0044cc); }
+      .pin-green::before { background: radial-gradient(circle at 35% 35%, #6bff6b, #00aa00); }
+      .pin-yellow::before { background: radial-gradient(circle at 35% 35%, #ffe66b, #ccaa00); }
+
+      .sticky {
+        padding: 16px 18px 14px;
+        box-shadow: 2px 3px 6px rgba(0,0,0,0.2);
+        position: relative;
+        margin-bottom: 24px;
+        font-family: 'Caveat', cursive;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+
+      .sticky::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+        z-index: 2;
+      }
+
+      .sticky-yellow { background: #fff9a5; }
+      .sticky-yellow::before { background: radial-gradient(circle at 35% 35%, #ff6b6b, #cc0000); }
+      .sticky-pink { background: #ffb5c2; }
+      .sticky-pink::before { background: radial-gradient(circle at 35% 35%, #6ba3ff, #0044cc); }
+      .sticky-blue { background: #b5d8ff; }
+      .sticky-blue::before { background: radial-gradient(circle at 35% 35%, #6bff6b, #00aa00); }
+      .sticky-green { background: #b5ffcb; }
+      .sticky-green::before { background: radial-gradient(circle at 35% 35%, #ffe66b, #ccaa00); }
+
+      .card-title {
+        font-family: 'Special Elite', 'Courier New', monospace;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 6px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .card h3 {
+        font-family: 'Caveat', cursive;
+        font-size: 28px;
+        margin: 0 0 6px;
+        font-weight: 700;
+      }
+
+      .card p, .card li {
+        font-family: 'Caveat', cursive;
+        font-size: 19px;
+      }
+
+      .card p {
+        margin: 0 0 8px;
+      }
+
+      .board-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        align-items: start;
+      }
+
+      .board-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+
+      .board-row > * {
+        flex: 1;
+        min-width: 260px;
+      }
+
+      .rot-1 { transform: rotate(-1.5deg); }
+      .rot-2 { transform: rotate(1.2deg); }
+      .rot-3 { transform: rotate(-0.8deg); }
+      .rot-4 { transform: rotate(2deg); }
+      .rot-5 { transform: rotate(-2.2deg); }
+      .rot-6 { transform: rotate(0.7deg); }
+      .rot-7 { transform: rotate(-1.8deg); }
+      .rot-8 { transform: rotate(1.5deg); }
+
+      .storyboard-strip {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 16px 10px 12px;
+        background: #fdf6e3;
+        box-shadow: 2px 3px 8px rgba(0,0,0,0.25);
+        margin-bottom: 24px;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .storyboard-strip::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 30px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #ff6b6b, #cc0000);
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+        z-index: 2;
+      }
+
+      .storyboard-strip::after {
+        content: '';
+        position: absolute;
+        top: -6px;
+        right: 30px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #ff6b6b, #cc0000);
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+        z-index: 2;
+      }
+
+      .storyboard-strip img {
+        height: 260px;
+        width: auto;
+        display: inline-block;
+        margin-right: 8px;
+        border: 1px solid #ddd;
+        vertical-align: top;
+      }
+
+      .storyboard-label {
+        font-family: 'Special Elite', 'Courier New', monospace;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        display: block;
+        white-space: normal;
+      }
+
+      .script-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.15s ease;
+      }
+
+      .script-card:hover {
+        transform: rotate(-1.5deg) scale(1.03);
+      }
+
+      .script-card .card {
+        border-left: 4px solid #cc0000;
+      }
+
+      .beat-list {
+        padding-left: 0;
+        list-style: none;
+        margin: 0;
+      }
+
+      .beat-list li {
+        font-family: 'Caveat', cursive;
+        font-size: 17px;
+        margin-bottom: 6px;
+        padding-left: 16px;
+        position: relative;
+      }
+
+      .beat-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+      }
+
+      .char-tagline {
+        font-family: 'Caveat', cursive;
+        font-size: 16px;
+        font-style: italic;
+        opacity: 0.7;
+        margin: 0 0 8px;
+      }
+
+      .char-traits {
+        font-family: 'Caveat', cursive;
+        font-size: 17px;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .situation-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .section-divider {
+        font-family: 'Special Elite', 'Courier New', monospace;
+        font-size: 13px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #000000;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        margin: 30px 0 16px;
+        text-align: center;
+      }
+
+      .tape {
+        position: absolute;
+        width: 60px;
+        height: 20px;
+        background: rgba(255, 255, 220, 0.45);
+        z-index: 3;
+      }
+
+      .tape-tl { top: -8px; left: 10px; transform: rotate(-8deg); }
+      .tape-tr { top: -8px; right: 10px; transform: rotate(12deg); }
+
+      .unfinished-stamp {
+        position: absolute;
+        bottom: 12px;
+        right: 16px;
+        font-family: 'Special Elite', 'Courier New', monospace;
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: #cc0000;
+        opacity: 0.6;
+        transform: rotate(-4deg);
+        border: 2px solid #cc0000;
+        padding: 2px 8px;
+      }
+
+      .eaves-quote {
+        font-family: 'Caveat', cursive;
+        font-size: 18px;
+        margin: 0 0 4px;
+        font-style: italic;
+      }
+
+      @media (max-width: 600px) {
+        .corkboard {
+          padding: 24px 14px 40px;
+          border-width: 8px;
+          margin: 0 -10px;
+        }
+        .board-row {
+          flex-direction: column;
+        }
+        .storyboard-strip img {
+          height: 180px;
+        }
+        .rot-1, .rot-2, .rot-3, .rot-4,
+        .rot-5, .rot-6, .rot-7, .rot-8 {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="/sockson.html">← work</a>
+        <a href="/index.html">home</a>
+      </div>
+
+      <div class="corkboard">
+
+        <!-- ═══════════ TITLE CARD ═══════════ -->
+        <div class="card pin-red rot-2" style="max-width: 500px; margin: 0 auto 30px;">
+          <h3 style="font-family: 'Special Elite', monospace; font-size: 32px; text-align: center; margin: 0; letter-spacing: 2px;">THE LIZ CARLIN SHOW</h3>
+          <p style="text-align: center; font-size: 20px; margin: 6px 0 0;">an unfinished sitcom.</p>
+          <p style="text-align: center; font-size: 16px; margin: 4px 0 0; opacity: 0.6;">january–june 2024</p>
+          <div class="unfinished-stamp">UNFINISHED</div>
+        </div>
+
+        <!-- ═══════════ CONCEPT + SCRIPT ═══════════ -->
+        <div class="board-row">
+          <div class="card pin-blue rot-3">
+            <div class="card-title">Concept</div>
+            <p>Sitcom-adjacent show set in college with a "gang" of four students: Liz, Scott, Pavan, and Mia.</p>
+            <p>Liz treats the real world like a sitcom. We're viewing her interpretation of events. She reduces herself, her friends, and her environment into a one-dimensional sitcom world, and hates it when she loses control of how she's perceived.</p>
+            <p>Progressing through the show, Liz will eventually break the superficiality of sitcoms and learn to live with reality.</p>
+          </div>
+
+          <a class="script-card rot-1" href="/images/liz-carlin/pilot.pdf" target="_blank">
+            <div class="card pin-red">
+              <div class="card-title">Pilot Script</div>
+              <h3>Episode One — Full Script</h3>
+              <p style="font-size: 22px;">click to read the pilot (PDF) →</p>
+              <div class="tape tape-tr"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- ═══════════ CHARACTERS ═══════════ -->
+        <div class="section-divider">— characters —</div>
+
+        <div class="board-row">
+          <div class="card pin-red rot-5">
+            <div class="card-title">Liz Carlin</div>
+            <p class="char-tagline">"Nobody can figure her out because she doesn't know who she is"</p>
+            <p class="char-traits">
+              Lovable but rough around the edges. From New York. Rich mother, divorced parents. Architecture major. Thrifty. Starts off sarcastic, ironic, cynical — learns to be herself as the season progresses.
+            </p>
+          </div>
+
+          <div class="card pin-green rot-2">
+            <div class="card-title">Scott</div>
+            <p class="char-tagline">"Straight-man, often asking stupid questions and starting conversations"</p>
+            <p class="char-traits">
+              Smart in a dumb way. Almost bro-ish. From Massachusetts. Psychology major.
+            </p>
+          </div>
+        </div>
+
+        <div class="board-row">
+          <div class="card pin-yellow rot-6">
+            <div class="card-title">Pavan</div>
+            <p class="char-tagline">"Awkwardly stumbles his way through funny situations"</p>
+            <p class="char-traits">
+              Indian-American. Chemistry major. Optimistic. Shy extrovert. Empathetic. Awkward.
+            </p>
+          </div>
+
+          <div class="card pin-blue rot-3">
+            <div class="card-title">Mia</div>
+            <p class="char-tagline">"Slightly neurotic but always sticks with the group"</p>
+            <p class="char-traits">
+              International student from Chile. Computer Science major. Neurotic. Slightly pessimistic. Unlucky. Collectivistic. Plans for everything.
+            </p>
+          </div>
+        </div>
+
+        <!-- ═══════════ STORYBOARD ═══════════ -->
+        <div class="section-divider">— pilot storyboard (incomplete) —</div>
+
+        <div class="storyboard-strip">
+          <span class="storyboard-label">episode one — storyboard panels →→→</span><br />
+          <img src="/images/liz-carlin/storyboard/IMG_0238.PNG" alt="panel 1" />
+          <img src="/images/liz-carlin/storyboard/IMG_0239.PNG" alt="panel 2" />
+          <img src="/images/liz-carlin/storyboard/IMG_0240.PNG" alt="panel 3" />
+          <img src="/images/liz-carlin/storyboard/IMG_0241.PNG" alt="panel 4" />
+          <img src="/images/liz-carlin/storyboard/IMG_0242.PNG" alt="panel 5" />
+          <img src="/images/liz-carlin/storyboard/IMG_0243.PNG" alt="panel 6" />
+          <img src="/images/liz-carlin/storyboard/IMG_0244.PNG" alt="panel 7" />
+          <img src="/images/liz-carlin/storyboard/IMG_0245.PNG" alt="panel 8" />
+          <img src="/images/liz-carlin/storyboard/IMG_0246.PNG" alt="panel 9" />
+          <img src="/images/liz-carlin/storyboard/IMG_0247.PNG" alt="panel 10" />
+          <img src="/images/liz-carlin/storyboard/IMG_0248.PNG" alt="panel 11" />
+          <img src="/images/liz-carlin/storyboard/IMG_0249.PNG" alt="panel 12" />
+          <img src="/images/liz-carlin/storyboard/IMG_0250.PNG" alt="panel 13" />
+          <img src="/images/liz-carlin/storyboard/IMG_0251.PNG" alt="panel 14" />
+          <img src="/images/liz-carlin/storyboard/IMG_0252.PNG" alt="panel 15" />
+          <img src="/images/liz-carlin/storyboard/IMG_0253.PNG" alt="panel 16" />
+          <img src="/images/liz-carlin/storyboard/IMG_0254.PNG" alt="panel 17" />
+          <img src="/images/liz-carlin/storyboard/IMG_0255.PNG" alt="panel 18" />
+          <img src="/images/liz-carlin/storyboard/IMG_0256.PNG" alt="panel 19" />
+          <img src="/images/liz-carlin/storyboard/IMG_0257.PNG" alt="panel 20" />
+          <img src="/images/liz-carlin/storyboard/IMG_0258.PNG" alt="panel 21" />
+          <img src="/images/liz-carlin/storyboard/IMG_0259.PNG" alt="panel 22" />
+          <img src="/images/liz-carlin/storyboard/IMG_0260.PNG" alt="panel 23" />
+          <img src="/images/liz-carlin/storyboard/IMG_0261.PNG" alt="panel 24" />
+          <img src="/images/liz-carlin/storyboard/IMG_0262.PNG" alt="panel 25" />
+          <img src="/images/liz-carlin/storyboard/IMG_0263.PNG" alt="panel 26" />
+          <img src="/images/liz-carlin/storyboard/IMG_0264.PNG" alt="panel 27" />
+          <img src="/images/liz-carlin/storyboard/IMG_0265.PNG" alt="panel 28" />
+          <img src="/images/liz-carlin/storyboard/IMG_0266.PNG" alt="panel 29" />
+          <img src="/images/liz-carlin/storyboard/IMG_0267.PNG" alt="panel 30" />
+          <img src="/images/liz-carlin/storyboard/IMG_0268.PNG" alt="panel 31" />
+        </div>
+
+        <!-- ═══════════ COLD OPEN ═══════════ -->
+        <div class="section-divider">— pilot breakdown —</div>
+
+        <div class="card pin-green rot-1" style="margin-bottom: 24px;">
+          <div class="card-title">Cold Open — Tipping</div>
+          <p style="font-size: 17px; opacity: 0.7; margin-bottom: 10px;">Conversation about tipping. Our introduction to these characters. Liz introduces them and quips to camera.</p>
+          <ul class="beat-list">
+            <li>Scott walks in and asks how not to tip: "They turn that iPad around and I lose all control."</li>
+            <li>Pavan can't help: "I can't help you, man. I fold."</li>
+            <li>Mia responds sarcastically: "I bet you do"</li>
+            <li>Pavan: "Easy for you to say! Everyone knows CS majors are born without hearts."</li>
+            <li>Mia rolls her eyes, responds to Scott: "The key is to not look the employees in the eyes. That's how they get you."</li>
+            <li>Pavan: "Do they tip much in Chile?" — Mia: "No, but they have a service fee most places. 10%."</li>
+            <li>Liz: "That's exactly what we need in this country."</li>
+            <li>Scott asks Liz how much she tips. Liz responds bluntly: "I don't."</li>
+            <li>Scott is astounded: "But you're rich! That's like seeing someone choke and not giving them the Heimlich!"</li>
+            <li>Liz: "Heimlich was a Nazi, you know." — Pavan: "No he wasn't." — Liz, smirking confidently: "Sounds like one."</li>
+          </ul>
+        </div>
+
+        <!-- ═══════════ BEAT SHEETS ═══════════ -->
+        <div class="board-row">
+          <div class="card pin-red rot-7">
+            <div class="card-title">A Story — Liz Flips Gold Necklace</div>
+            <ul class="beat-list">
+              <li>Liz finds a gold necklace at a thrift store, realizes it's worth way more than the price. Wants to flip it.</li>
+              <li>Tries eBay, doesn't work. Tries a jeweler, can't sell it because she doesn't know the quality.</li>
+              <li>Asks Pavan to test it in his chem lab. Pavan is hesitant but agrees. Liz also wants to steal dish soap. Scott wants her to steal thumbtacks.</li>
+              <li>They go to the lab, test the gold. Liz dumps a chemical from a beaker and washes it. They hear a sound and leave. Liz drops dish soap and thumbtacks.</li>
+              <li>Liz sells the necklace for a big profit, convincing the jeweler it's a family heirloom.</li>
+              <li>Liz buys everyone coffee. Everyone leaves. Liz says "wait guys I forgot my jacket" — leaves massive tip.</li>
+            </ul>
+          </div>
+
+          <div class="card pin-blue rot-4">
+            <div class="card-title">B Story — Scott Studies Studying</div>
+            <ul class="beat-list">
+              <li>Scott asks Mia for help with Stats.</li>
+              <li>Mia tries to explain, Scott doesn't understand. Mia suggests memory techniques: "You're a psych major, you'd know better than me."</li>
+              <li>Scott tries mnemonics and chunking. Friends make fun of "chunking" — he read it in a paper.</li>
+              <li>Scott tries a mind palace "like Sherlock Holmes" — he read it in a paper. Asks Liz to steal thumbtacks to pin up index cards.</li>
+              <li>Scott's quiz is tomorrow, he's screwed. Liz: "maybe if instead of studying how to study, you'd just… studied."</li>
+              <li>Quiz is canceled — professor slipped on some thumbtacks. (Liz and Pavan look at each other.)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="board-row">
+          <div class="card pin-yellow rot-8">
+            <div class="card-title">C Story — Mia Versus Professor</div>
+            <ul class="beat-list">
+              <li>Mia's professor hates her for always being late. She slept through her alarm. Decides to go early next time.</li>
+              <li>Sets an early alarm, sleeps through it, runs to class, runs back for her backpack, runs back to class. Professor is passive aggressive.</li>
+              <li>Mia makes it on time — but sits in an empty room. Class was moved. She's late again.</li>
+              <li>Eye of the Tiger montage. "wake up on time: check. brush teeth: check. shoes: check. backpack: check. check email for last-minute changes: che—" Face drops.</li>
+              <li>Mia's professor died. (Cut to conversation with Liz) "HE DIED?!" "He died hating me."</li>
+            </ul>
+          </div>
+
+          <div class="card pin-green rot-5">
+            <div class="card-title">D Story — Pavan's Thrifted Mug</div>
+            <ul class="beat-list">
+              <li>Pavan finds a funny mug at the thrift store (some awareness thing).</li>
+              <li>Drinking from it in the lab. Head researcher comes in, talks about how serious the mug's cause is. Pavan folds and admits he got it from the thrift store because it was funny. Head researcher does not appreciate it.</li>
+              <li>Pavan is on thin ice at his lab.</li>
+              <li>Pavan helps Liz test her gold even though he's on thin ice.</li>
+              <li>Head researcher asks who cleaned the beaker. Pavan blames someone else, they glare, Pavan admits it. Head researcher is proud: "that's the kind of initiative I look for."</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ═══════════ EPISODE IDEAS ═══════════ -->
+        <div class="section-divider">— potential episode situations —</div>
+
+        <div class="situation-grid">
+          <div class="sticky sticky-yellow rot-1"><strong>Tipping</strong></div>
+          <div class="sticky sticky-pink rot-3"><strong>Wrong Building</strong></div>
+          <div class="sticky sticky-blue rot-5"><strong>Last-Minute Mid-Terms</strong></div>
+          <div class="sticky sticky-green rot-2"><strong>Laundry</strong> — bottle episode, everyone waiting for their laundry</div>
+          <div class="sticky sticky-yellow rot-7"><strong>House Party</strong> — during + aftermath</div>
+          <div class="sticky sticky-pink rot-4"><strong>Weed Circle</strong> — paranoia and fun</div>
+          <div class="sticky sticky-blue rot-8"><strong>Dining Halls</strong> — finding seats, choosing which one</div>
+          <div class="sticky sticky-green rot-1"><strong>Being Late To Class</strong> — TA hates someone, passive aggressive, Murphy's Law</div>
+          <div class="sticky sticky-yellow rot-6"><strong>Snow Day</strong></div>
+          <div class="sticky sticky-pink rot-2"><strong>Extra-Curricular Clubs</strong></div>
+          <div class="sticky sticky-blue rot-3"><strong>Office Hours</strong></div>
+          <div class="sticky sticky-green rot-5"><strong>Career Fair</strong></div>
+          <div class="sticky sticky-yellow rot-8"><strong>Halloween</strong></div>
+          <div class="sticky sticky-pink rot-1"><strong>Watching A Movie</strong> — argument about what to watch, people try to pirate it, Liz throws money at the TV</div>
+          <div class="sticky sticky-blue rot-7"><strong>Writing A Paper In Record Time</strong></div>
+          <div class="sticky sticky-green rot-4"><strong>All-Nighter</strong></div>
+          <div class="sticky sticky-yellow rot-2"><strong>Shoplifting</strong></div>
+          <div class="sticky sticky-pink rot-6"><strong>Protests</strong></div>
+          <div class="sticky sticky-blue rot-1"><strong>Architecture Class</strong> — Liz</div>
+          <div class="sticky sticky-green rot-8"><strong>"Come with me to"</strong> — people unable to do anything alone</div>
+          <div class="sticky sticky-yellow rot-3"><strong>Fire Drill</strong></div>
+          <div class="sticky sticky-pink rot-5"><strong>WMUA/Student Radio</strong></div>
+          <div class="sticky sticky-blue rot-4"><strong>Car Breakdown</strong></div>
+          <div class="sticky sticky-green rot-7"><strong>Murder Mystery</strong></div>
+          <div class="sticky sticky-yellow rot-6"><strong>Thanksgiving Break</strong></div>
+          <div class="sticky sticky-pink rot-2"><strong>Spring Break</strong></div>
+          <div class="sticky sticky-blue rot-8"><strong>Starting Vaping</strong></div>
+          <div class="sticky sticky-green rot-1"><strong>Drive Thrus</strong></div>
+          <div class="sticky sticky-yellow rot-5"><strong>"Who's The Main Character"</strong> — conversation, good for cold open</div>
+          <div class="sticky sticky-pink rot-3"><strong>Rec Center/Gym</strong></div>
+          <div class="sticky sticky-blue rot-6"><strong>Asking Someone Out</strong> — "I don't wanna ask her out because I don't want to shatter the idea that she might want to go out with me"</div>
+          <div class="sticky sticky-green rot-4"><strong>Dissolve Into Groups</strong> — group splits by gender, different conversations, when they reunite they speak normally</div>
+        </div>
+
+        <!-- ═══════════ EAVESDROPPING GAGS ═══════════ -->
+        <div class="section-divider">— eavesdropping gag ideas —</div>
+
+        <div class="card pin-blue rot-3" style="max-width: 600px;">
+          <div class="card-title">Background Chatter</div>
+          <p style="font-size: 16px; opacity: 0.6; margin-bottom: 12px;">Before we pan to our characters, other students say something "stereotypically college." This is Liz's interpretation of everyone else. When she's depressed, she perceives them as judging her.</p>
+          <p class="eaves-quote">"Yeah, I did track in high school, but that's not me any more"</p>
+          <p class="eaves-quote">"The Starbucks on campus is worse than the one off campus"</p>
+          <p class="eaves-quote">"Going to class is the worst part of this whole college thing"</p>
+          <p class="eaves-quote">"He's really smart but he sucks at teaching"</p>
+          <p class="eaves-quote">"If I just get a 97 on the final, I can get an A"</p>
+          <p class="eaves-quote">"I can't justify spending that much money on a smoothie in a <strong>bowl</strong>"</p>
+          <div class="tape tape-tl"></div>
+        </div>
+
+      </div>
+
+      <footer style="margin-top: 40px;">© vikramaditya jaisingh</footer>
+    </div>
+  </body>
+</html>
