@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>favorites — vikramaditya jaisingh</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <style>
+      .wall-header {
+        margin-bottom: 12px;
+      }
+
+      .wall-header h1 {
+        margin: 0;
+        display: inline;
+      }
+
+      .wall {
+        column-count: 6;
+        column-gap: 3px;
+      }
+
+      .tile {
+        display: block;
+        position: relative;
+        margin-bottom: 3px;
+        break-inside: avoid;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        line-height: 0;
+      }
+
+      .tile img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: filter 0.3s ease;
+      }
+
+      .tile-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        pointer-events: none;
+      }
+
+      .tile:hover .tile-overlay {
+        opacity: 1;
+      }
+
+      .tile-overlay-title {
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .tile-overlay-by {
+        color: #ffffff;
+        font-size: 10px;
+        line-height: 1.3;
+        opacity: 0.7;
+        margin-top: 2px;
+      }
+
+      .tile {
+        animation: tileIn 0.3s ease both;
+      }
+
+      @keyframes tileIn {
+        from {
+          opacity: 0;
+          transform: scale(0.92);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 1000px) {
+        .wall { column-count: 5; }
+      }
+
+      @media (max-width: 768px) {
+        .wall { column-count: 4; }
+      }
+
+      @media (max-width: 500px) {
+        .wall { column-count: 3; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="/index.html">home</a>
+        <a href="/sockson.html">work</a>
+        <a href="/socksoff.html">WORK</a>
+        <a href="/about.html">about</a>
+        <a href="/notebooks.html">process.exe</a>
+      </div>
+
+      <div class="wall-header">
+        <h1>favorites</h1>
+        <p>→ <a href="#" onclick="shuffleWall(); return false;">shuffle</a></p>
+      </div>
+
+      <div class="wall" id="wall"></div>
+
+      <footer style="margin-top: 40px;">© vikramaditya jaisingh</footer>
+    </div>
+
+    <script>
+      var IMG_DIR = '/images/favorites/';
+      var items = [];
+
+      function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = a[i];
+          a[i] = a[j];
+          a[j] = tmp;
+        }
+        return a;
+      }
+
+      function renderWall(data) {
+        var wall = document.getElementById('wall');
+        wall.innerHTML = '';
+        data.forEach(function(item, i) {
+          var isLink = item.link !== null;
+          var tag = isLink ? 'a' : 'div';
+          var el = document.createElement(tag);
+          el.className = 'tile';
+          el.style.animationDelay = (i * 6) + 'ms';
+
+          if (isLink) {
+            el.href = item.link;
+            el.target = '_blank';
+            el.rel = 'noopener';
+          }
+
+          el.innerHTML =
+            '<img src="' + IMG_DIR + item.img + '" alt="' + item.title + '" loading="lazy" />' +
+            '<div class="tile-overlay">' +
+              '<span class="tile-overlay-title">' + item.title + '</span>' +
+              '<span class="tile-overlay-by">' + item.by + '</span>' +
+            '</div>';
+
+          wall.appendChild(el);
+        });
+      }
+
+      function shuffleWall() {
+        items = shuffle(items);
+        renderWall(items);
+      }
+
+      fetch('/data/favorites.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          items = shuffle(data);
+          renderWall(items);
+        });
+    </script>
+  </body>
+</html>
