@@ -549,7 +549,7 @@
   {
     "title": "Is This It?",
     "by": "Kanan Gill",
-    "link": null,
+    "link": "https://www.youtube.com/watch?v=fh0Ru6LjBAY",
     "img": "isthisit.jpg"
   },
   {
@@ -636,5 +636,101 @@
     "by": "Park Chan-wook",
     "link": null,
     "img": "oldboy.jpg"
+  },
+  {
+    "title": "SP-404MKII",
+    "by": "Roland",
+    "link": null,
+    "img": "roland404.png"
+  },
+  {
+    "title": "MPK Mini MKII",
+    "by": "AKAI",
+    "link": null,
+    "img": "mpk.png"
+  },
+  {
+    "title": "Echo Mini",
+    "by": "Snowsky",
+    "link": null,
+    "img": "echomini.jpg"
+  },
+  {
+    "title": "Minecraft Xbox - Sinking Feeling [124]",
+    "by": "stampylongnose",
+    "link": "https://www.youtube.com/watch?v=2w4zzVPJ4WU",
+    "img": "stampy1.jpg"
+  },
+  {
+    "title": "Dear Ryan",
+    "by": "nigahiga",
+    "link": "www.youtube.com/watch?v=_vycUIW_tsA&list=PLRU-B1PBK4BuhOS5QTd9ze2-wK2AolUa4&pp=0gcJCcsEOCosWNin",
+    "img": "dearryan.jpg"
+  },
+  {
+    "title": "How To Sing Like Your Favorite Artists",
+    "by": "nigahiga",
+    "link": "https://www.youtube.com/watch?v=AJVpL6L7Zeo",
+    "img": "htslyfa.jpg"
+  },
+  {
+    "title": "Proving the Illuminati is Real!",
+    "by": "nigahiga",
+    "link": "https://www.youtube.com/watch?v=03_Tby_ICCw",
+    "img": "illuminati.jpg"
+  },
+  {
+    "title": "10 How To's That Will Blow Your Mind!",
+    "by": "nigahiga",
+    "link": "https://www.youtube.com/watch?v=B7Lrwe6wwig",
+    "img": "10howtos.jpg"
+  },
+  {
+    "title": "Parkourse",
+    "by": "nigahiga",
+    "link": "https://www.youtube.com/watch?v=y_pmW_Rh4KQ&pp=ygUOcGFya291cnNlIGVwIDE%3D",
+    "img": "parkourse.jpg"
+  },
+  {
+    "title": "Better Call Saul",
+    "by": "Vince Gilligan",
+    "link": null,
+    "img": "bcs.jpg"
+  },
+  {
+    "title": "The Show About The Show",
+    "by": "Caveh Zahedi",
+    "link": "https://www.youtube.com/@cavehzahedi",
+    "img": "caveh.jpg"
+  },
+  {
+    "title": "CRAFTABLE ANIMALS & MOBS MOD!",
+    "by": "DanTDM",
+    "link": "https://www.youtube.com/watch?v=5vZtlIipFGo",
+    "img": "dantdm1.jpg"
+  },
+  {
+    "title": "Diary 30: Superman is coming to school",
+    "by": "Daxflame",
+    "link": "https://www.youtube.com/watch?v=ki32wfWqMXc",
+    "img": "daxflame1.jpg"
+  },
+  {
+    "title": "I'm What the Culture Feeling",
+    "by": "F.D Signifier",
+    "link": "https://www.youtube.com/watch?v=AEsf7QmIJTQ",
+    "img": "fdsignifier1.jpg"
+  },
+  {
+    "title": "Will It Deep Fry? - Taste Test",
+    "by": "Good Mythical Morning",
+    "link": "https://www.youtube.com/watch?v=yTrIfkAb-_8",
+    "img": "gmm1.jpg"
+  },
+  {
+    "title": "Lil Globglogabgalab",
+    "by": "Grandayy",
+    "link": "https://www.youtube.com/watch?v=cIwRQwAS_YY",
+    "img": "grandayy1.jpg"
   }
 ]
