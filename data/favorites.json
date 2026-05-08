@@ -732,5 +732,161 @@
     "by": "Grandayy",
     "link": "https://www.youtube.com/watch?v=cIwRQwAS_YY",
     "img": "grandayy1.jpg"
+  },
+  {
+    "title": "Cowboy Bebop",
+    "by": "Shinichirō Watanabe",
+    "link": null,
+    "img": "cowboybebop.jpg"
+  },
+  {
+    "title": "Bedroom in Arles",
+    "by": "Vincent van Gogh",
+    "link": null,
+    "img": "bedroom.jpg"
+  },
+  {
+    "title": "The Mild Mild West",
+    "by": "Banksy",
+    "link": null,
+    "img": "banksy1.jpg"
+  },
+  {
+    "title": "Air Jordan 1 High OG X V.A.A.",
+    "by": "Virgil Abloh",
+    "link": null,
+    "img": "vaa.png"
+  },
+  {
+    "title": "Paradise Lost",
+    "by": "Raqib Shaw",
+    "link": "https://raqibshawstudio.com/exhibitions/37-paradise-lost-the-art-institute-of-chicago-chicago-illinois/works/",
+    "img": "raqibshaw1.jpg"
+  },
+  {
+    "title": "Nighthawks",
+    "by": "Edward Hopper",
+    "link": "https://www.artic.edu/artworks/111628/nighthawks",
+    "img": "nighthawks.jpg"
+  },
+  {
+    "title": "POSCA PC-5M",
+    "by": "uni",
+    "link": null,
+    "img": "posca.jpg"
+  },
+  {
+    "title": "The Metropolitan Museum of Art",
+    "by": "The Met",
+    "link": "https://www.metmuseum.org/",
+    "img": "themet.jpg"
+  },
+  {
+    "title": "Pokemon Emerald",
+    "by": "GameFreak",
+    "link": null,
+    "img": "emerald.jpg"
+  },
+  {
+    "title": "Pokemon Soul Silver",
+    "by": "GameFreak",
+    "link": null,
+    "img": "soulsilver.jpg"
+  },
+  {
+    "title": "Pokemon Fire Red",
+    "by": "GameFreak",
+    "link": null,
+    "img": "firered.jpg"
+  },
+  {
+    "title": "Pokemon Diamond",
+    "by": "GameFreak",
+    "link": null,
+    "img": "diamond.jpg"
+  },
+  {
+    "title": "Pokemon White",
+    "by": "GameFreak",
+    "link": null,
+    "img": "pkwhite.jpg"
+  },
+  {
+    "title": "Pokemon Omega Ruby",
+    "by": "GameFreak",
+    "link": null,
+    "img": "pkor.jpg"
+  },
+  {
+    "title": "Chinese Laundry: A Portrait of the Artist’s Parents",
+    "by": "Martin Wong",
+    "link": "https://exhibits.stanford.edu/martin-wong/catalog/pw403cq8814",
+    "img": "martinwong1.jpg"
+  },
+  {
+    "title": "Tell My Troubles to the Eight Ball (Eureka)",
+    "by": "Martin Wong",
+    "link": "https://www.stedelijk.nl/en/news/martin-wong-featured-at-the-stedelijk-with-comprehensive-overview",
+    "img": "martinwong2.jpg"
+  },
+  {
+    "title": "The Story of Lucretia",
+    "by": "Sandro Botticelli",
+    "link": "https://www.gardnermuseum.org/experience/rooms/raphael-room",
+    "img": "botticelli.jpg"
+  },
+  {
+    "title": "new Nintendo 3DS with Luigi Cover Plates",
+    "by": "Nintendo",
+    "link": null,
+    "img": "3ds.jpg"
+  },
+  {
+    "title": "DualShock 4",
+    "by": "Sony PlayStation",
+    "link": null,
+    "img": "ds4.jpg"
+  },
+  {
+    "title": "Stedelijk Museum Amsterdam",
+    "by": "Stedelijk",
+    "link": "https://www.stedelijk.nl/",
+    "img": "stedelijk.png"
+  },
+  {
+    "title": "CITIZEN White 4197-S115329",
+    "by": "Citizen",
+    "link": null,
+    "img": "citizen.jpg"
+  },
+  {
+    "title": "Diet Dr Pepper",
+    "by": "Dr Pepper",
+    "link": null,
+    "img": "drpep.jpg"
+  },
+  {
+    "title": "Pineapple",
+    "by": "Nature",
+    "link": null,
+    "img": "pineapple.jpg"
+  },
+  {
+    "title": "Batman",
+    "by": "Lego",
+    "link": null,
+    "img": "legobatman.png"
+  },
+  {
+    "title": "Randoms",
+    "by": "Rowntrees",
+    "link": null,
+    "img": "randoms.jpg"
+  },
+  {
+    "title": "CD Jewel Case",
+    "by": "Peter Doodson/Philips",
+    "link": null,
+    "img": "jewelcase.png"
   }
 ]
